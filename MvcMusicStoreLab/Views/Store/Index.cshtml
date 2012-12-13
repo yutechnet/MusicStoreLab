@@ -1,0 +1,34 @@
+﻿@model IEnumerable<MvcMusicStoreLab.Models.Genre>
+
+@{
+    ViewBag.Title = "Store";
+}
+
+<h2>A very simple Genre list </h2>
+
+@*<table>
+    <tr>
+        <th>
+            Genre
+        </th>
+     </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+    </tr>
+}
+
+</table>
+*@
+
+<p>Select from @Model.Count() genres:</p>
+
+<ul>
+@foreach (var genre in Model)
+{
+    <li>@Html.ActionLink(genre.Name, "Browse", new { genre = genre.Name })</li>
+}
+</ul>
