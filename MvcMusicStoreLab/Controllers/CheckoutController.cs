@@ -7,6 +7,8 @@ using MvcMusicStoreLab.Models;
 
 namespace MvcMusicStoreLab.Controllers
 {
+
+    [Authorize]
     public class CheckoutController : Controller
     {
 
@@ -19,6 +21,12 @@ namespace MvcMusicStoreLab.Controllers
         // AddressAndPayment (GET method) will display a form to allow the user to enter their information.
         public ActionResult AddressAndPayment()
         {
+            //need to prepare State List into Viewbag
+            //IEnumerable<string> states = storeDB.Database.SqlQuery<string>("SELECT abbr as Name from dbo.State").ToList();
+            //ViewData["StateList"] = new SelectList(states);
+
+            //ViewData["StateList"] = new SelectList(storeDB.Database.SqlQuery<State>("SELECT abbr from dbo.State").ToList(), "abbr", "abbr");
+
             return View();//just return the checkout form (view)
         }
 
@@ -42,6 +50,7 @@ namespace MvcMusicStoreLab.Controllers
                 {
                     order.Username = User.Identity.Name;
                     order.OrderDate = System.DateTime.Now;
+                    order.Country = "USA";  //default to US for now
 
                     storeDB.Orders.Add(order);  // add order first
                     storeDB.SaveChanges();

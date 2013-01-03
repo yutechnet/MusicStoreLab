@@ -31,7 +31,9 @@ namespace MvcMusicStoreLab
 
         protected void Application_Start()
         {
-            System.Data.Entity.Database.SetInitializer(new MvcMusicStoreLab.Models.SampleData());
+            // do not initialize
+            //System.Data.Entity.Database.SetInitializer(new MvcMusicStoreLab.Models.SampleData());
+            System.Data.Entity.Database.SetInitializer<MvcMusicStoreLab.Models.MusicStoreEntities>(null);
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);

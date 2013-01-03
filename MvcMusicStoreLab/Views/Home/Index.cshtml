@@ -6,13 +6,13 @@
 <div id="promotion">
 </div>
 
-<h3><em>Fresh</em>off the grill</h3>
+<h3><em>Fresh</em> off the grill</h3>
 <ul id="album-list">
     @foreach (var album in Model)
     {
         <li> 
         <a href="@Url.Action("Details", "Store", new{id=album.AlbumID})">
-        <img alt="@album.Title" src=@Url.Content("~"+album.AlbumArtUrl) /> <span>@album.Title</span>
+        <img alt="@album.Title" src=@Url.Content(album.AlbumArtUrl) width="100" height="75" /> <span>@album.Title</span>
         </a>
         </li>
     }

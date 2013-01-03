@@ -329,6 +329,6 @@ tr:hover
 /* additional */
 .genre
 {
-    width: 1200px;
     float:right;
+    width:900px;
 }

@@ -14,5 +14,7 @@ namespace MvcMusicStoreLab.Models
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        //not to include State into DbContext for now
+        //public DbSet<State> States { get; set; }
     }
 }

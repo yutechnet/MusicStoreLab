@@ -1,7 +1,7 @@
 ﻿@model MvcMusicStoreLab.Models.Order
 
 @{
-    ViewBag.Title = "Address Adn Payment";
+    ViewBag.Title = "Address And Payment";
 }
 
 
@@ -16,9 +16,76 @@
         Address And Payment</h2>    
     <fieldset>
         <legend>Shipping Information</legend>
-        @Html.EditorForModel()
+        
+@*      
+  @Html.EditorForModel()
+*@        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName, "First Name")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m=>m.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName, "Last Name")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email, "Email Address")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address, "Address Line 1")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.City, "City")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.City)
+            @Html.ValidationMessageFor(model => model.City)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.State, "State")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("state", MvcMusicStoreLab.Models.USState.StateSelectList)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PostalCode, "Zip Code")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.PostalCode)
+            @Html.ValidationMessageFor(model => model.PostalCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone, "Phone Number")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+
     </fieldset>
-    <fieldset>
+
+        <fieldset>
         <legend>Payment</legend>
         <p>
             We're running a promotion: all music is free with the promo code: "FREE"</p>
