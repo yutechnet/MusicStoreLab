@@ -13,7 +13,7 @@
 
             if (recordToDelete != null) {
                 //perform Ajax post
-                $.post("/ShoppingCart/RemoveFromCart", { "id": recordToDelete }, function (data) {
+                $.post("@Url.Content("~/ShoppingCart/RemoveFromCart")", { "id": recordToDelete }, function (data) {
                     // Callback function, so successful requests get here
                     // Update the page elements
                     if (data.ItemCount == 0) {
